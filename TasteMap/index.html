@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tastemap — Meu mapa gastronômico</title>
+
+    <!-- Leaflet -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <!-- Nosso CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div class="logo">
+            <span class="logo-icon">T</span>
+
+            <div>
+                <h1>Tastemap</h1>
+                <p>Seu mapa. Seu paladar.</p>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <button id="themeButton" class="icon-button" title="Alterar tema">
+                <button
+    id="themeButton"
+    class="theme-toggle"
+    aria-label="Alternar modo claro e escuro"
+    title="Alternar modo claro e escuro"
+>
+    🌙
+</button>
+                ☼
+            </button>
+
+            <button class="profile-button">
+                Convidado
+            </button>
+        </div>
+
+    </header>
+
+
+    <main class="app">
+
+        <!-- PAINEL LATERAL -->
+
+        <aside class="sidebar">
+
+            <div class="welcome">
+                <span class="eyebrow">NATAL, RN</span>
+
+                <h2>
+                    Onde vamos<br>
+                    comer?
+                </h2>
+
+                <p>
+                    Descubra seus lugares favoritos
+                    e registre novas experiências.
+                </p>
+            </div>
+
+
+            <button class="choose-button">
+                <span>🍽️</span>
+
+                <div>
+                    <strong>Onde vamos comer?</strong>
+                    <small>Encontre uma escolha segura</small>
+                </div>
+
+                <span class="arrow">→</span>
+            </button>
+
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Buscar restaurante..."
+                >
+
+            </div>
+
+
+            <div class="filters">
+
+                <button class="filter active">
+                    Todos
+                </button>
+
+                <button class="filter">
+                    Visitei
+                </button>
+
+                <button class="filter">
+                    Quero ir
+                </button>
+
+            </div>
+
+
+            <div class="section-title">
+
+                <div>
+                    <span class="eyebrow">MEUS LUGARES</span>
+                    <h3>Restaurantes</h3>
+                </div>
+
+                <span class="count">0</span>
+
+            </div>
+
+
+            <div id="restaurantList" class="restaurant-list">
+
+                <div class="empty-state">
+
+                    <span>🍴</span>
+
+                    <h3>Seu mapa começa aqui</h3>
+
+                    <p>
+     <section class="ranking-section">
+
+    <div class="section-title">
+        <div>
+            <span class="eyebrow">SEU PALADAR</span>
+            <h3>Comparar lugares</h3>
+        </div>
+    </div>
+
+    <p class="ranking-description">
+        Escolha qual você prefere. Suas escolhas criam seu ranking pessoal.
+    </p>
+
+    <button id="compareButton" class="compare-button">
+        <span>⚖️</span>
+        <div>
+            <strong>Qual foi melhor?</strong>
+<section class="ranking-list-section">
+
+    <div class="section-title">
+
+        <div>
+            <span class="eyebrow">
+                SEU RANKING
+            </span>
+
+            <h3>
+                Meus melhores lugares
+            </h3>
+        </div>
+
+    </div>
+
+
+    <div id="rankingList">
+
+        <p class="ranking-empty">
+            Faça algumas comparações
+            para construir seu ranking.
+        </p>
+
+    </div>
+
+</section>
+
+            <small>Comparar dois lugares</small>
+        </div>
+        <span>→</span>
+    </button>
+
+</section>               
+
+
+            <button class="add-button">
+                <span>+</span>
+                Adicionar lugar
+            </button>
+
+        </aside>
+
+
+        <!-- MAPA -->
+
+        <section class="map-area">
+
+            <div id="map"></div>
+
+            <div class="map-label">
+                <span class="pulse"></span>
+                Natal, Rio Grande do Norte
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Leaflet JS -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+    <!-- Nosso JavaScript -->
+
+    <script src="app.js"></script>
+
+</body>
+</html>
+
